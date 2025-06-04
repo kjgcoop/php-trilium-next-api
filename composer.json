@@ -1,7 +1,8 @@
 {
   "name": "kjgcoop/trilium-next-api",
+  "description": "A package to make changes to a Trilium Next instance",
   "type": "library",
-  "license": "GPLv3",
+  "license": "GPL-3.0-or-later",
   "autoload": {
     "psr-4": {
       "Kjgcoop\\TriliumNextApi\\": "src/"
