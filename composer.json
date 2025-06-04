@@ -1,5 +1,5 @@
 {
-  "name": "kjgcoop/trilium-next-api",
+  "name": "kjgcoop/php-trilium-next-api",
   "description": "A package to make changes to a Trilium Next instance",
   "type": "library",
   "license": "GPL-3.0-or-later",
