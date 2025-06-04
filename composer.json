@@ -1,0 +1,17 @@
+{
+  "name": "kjgcoop/trilium-next-api",
+  "type": "library",
+  "license": "GPLv3",
+  "autoload": {
+    "psr-4": {
+      "Kjgcoop\\TriliumNextApi\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "KJ Coop",
+      "email": "git@kjcoop.com"
+    }
+  ],
+  "require": {}
+}
