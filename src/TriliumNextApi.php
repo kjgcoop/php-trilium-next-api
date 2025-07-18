@@ -26,9 +26,9 @@ class TriliumNextApi {
         $this->log = $config['log'] ?? false;
     }
 
-    function getDatesContents($idForDate) : string
+    function getContentsFromId($shortCode) : string
     {
-        $uriForContents = $this->base.'notes/'.$idForDate.'/content';
+        $uriForContents = $this->base.'notes/'.$shortCode.'/content';
 
         try {
             $response = $this->client->request('GET', $uriForContents, [
@@ -43,7 +43,7 @@ class TriliumNextApi {
                 print_r($e->getMessage());
 
             }
-            throw new \Exception("Unable to get date note's contents");
+            throw new \Exception("Unable to get note's contents");
         }
     }
 
@@ -66,10 +66,9 @@ class TriliumNextApi {
             return current($dateNoteId->attributes)->noteId;
 
         } catch (\Exception $e) {
-            throw new \Exception("Request to $uriForId threw an exception");
+            throw new \Exception("Request to $uriForId threw an exception: ".$e->getMessage());
         }
     }
-
 
     function writeNewContents($idForDate, $contents) : bool
     {
@@ -90,5 +89,8 @@ class TriliumNextApi {
             echo $e->getMessage();
             throw $e;
         }
+    }
+    function getDatesContents($shortCode) : string {
+        return $this->getContentsFromId($shortCode);
     }
 }
