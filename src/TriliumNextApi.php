@@ -26,7 +26,11 @@ class TriliumNextApi {
         $this->log = $config['log'] ?? false;
     }
 
-    function getContentsFromId($shortCode) : string
+    public function isUsingHttps(): bool {
+        return substr($this->config['trilium_endpoint'], 0, 6) === 'https:';
+    }
+
+    public function getContentsFromId($shortCode) : string
     {
         $uriForContents = $this->base.'notes/'.$shortCode.'/content';
 
